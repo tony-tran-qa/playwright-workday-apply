@@ -1,0 +1,39 @@
+# SAMPLE profile - fake person, safe to commit. Copy to private/profile.yaml and edit.
+person:
+  full_name: Alex Sample
+  email: alex.sample@example.com
+  phone: 555-010-0000
+
+work_experience:          # newest first
+  - title: Senior QA Analyst
+    company: Example Corp
+    location: Springfield, ON
+    from: "03/2018"       # MM/YYYY
+    to: "12/2025"         # MM/YYYY or "present"
+    description: |
+      - Owned performance testing for a sample microservices platform using JMeter.
+      - Built Robot Framework and pytest suites run in Jenkins CI.
+  - title: QA Analyst
+    company: Demo Systems Inc.
+    location: Shelbyville, ON
+    from: "06/2012"
+    to: "02/2018"
+    description: |
+      - Automated regression tests for a sample web application.
+
+education:
+  - school: Sample University
+    degree: Bachelor            # must match the Workday dropdown text exactly
+    field_of_study: Computer Science   # typed into Workday's search box, Enter picks top match
+    from_year: "2008"
+    to_year: "2012"
+
+# Standard answers. Key = a unique piece of the question text; value = exact option text.
+# Salary is NOT here on purpose: it is per job (--salary on the command line).
+application_answers:
+  "Why are you applying": Products
+  "legally eligible": "Yes"
+  "Security Clearance": "Yes"
+  "background check": "Yes"
+  "hybrid model": "Yes"
+  "personal relationship": "No"

@@ -1,0 +1,11 @@
+# Personal data - never commit
+private/
+.auth/
+# Run artifacts
+runs/
+__pycache__/
+.pytest_cache/
+*.pyc
+
+# Local scratch
+temp_setup/

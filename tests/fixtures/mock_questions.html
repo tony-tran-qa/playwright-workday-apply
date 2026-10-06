@@ -1,0 +1,17 @@
+<!-- Simplified stand-in for Workday's "Application Questions" step (labels copied from the
+     visible question text; markup is hand-built, not Workday's). -->
+<html><body>
+<div id="q"></div><button>Save and Continue</button>
+<script>
+const qs=[['Why are you applying to work at Example Corp?*',['Brand','Culture','Products','Other']],
+ ['Are you legally eligible to work in the country and location specified in the position?*',['Yes','No']],
+ ['Some roles may require a Security Clearance. Are you able to obtain one?*',['Yes','No']],
+ ['Do you consent to a comprehensive background check?*',['Yes','No']],
+ ['If selected, are you open to working in a hybrid model?*',['Yes','No']],
+ ['Do you have a personal relationship with anyone at Example Corp?*',['Yes','No']]];
+qs.forEach(([t,opts],i)=>{const b=document.createElement('button');b.id='q'+i;b.setAttribute('aria-label',t);b.textContent='Select One';
+ b.onclick=()=>{document.querySelectorAll('[role=listbox]').forEach(x=>x.remove());const l=document.createElement('div');l.setAttribute('role','listbox');
+ opts.forEach(o=>{const d=document.createElement('div');d.setAttribute('role','option');d.textContent=o;d.onclick=()=>{b.textContent=o;l.remove();};l.append(d);});
+ document.body.append(l);};document.getElementById('q').append(b);});
+document.getElementById('q').insertAdjacentHTML('beforeend','<label for="sal">What is your desired base salary?*</label><input id="sal">');
+</script></body></html>
